@@ -93,12 +93,12 @@
 #define RT_USING_SERIAL_V2
 #define RT_SERIAL_USING_DMA
 #define RT_USING_I2C
-#define RT_I2C_DEBUG
 #define RT_USING_I2C_BITOPS
 #define RT_I2C_BITOPS_DEBUG
 #define RT_USING_PIN
 #define RT_USING_RTC
 #define RT_USING_SOFT_RTC
+#define RT_USING_SPI
 #define RT_USING_SENSOR
 #define RT_USING_SENSOR_CMD
 
@@ -185,7 +185,7 @@
 #define RT_PKG_MQTT_THREAD_STACK_SIZE 4096
 #define PKG_PAHOMQTT_SUBSCRIBE_HANDLERS 1
 #define MQTT_DEBUG
-#define PKG_USING_PAHOMQTT_V110
+#define PKG_USING_PAHOMQTT_LATEST
 #define PKG_USING_WEBCLIENT
 #define WEBCLIENT_DEBUG
 #define WEBCLIENT_USING_SAMPLES
@@ -303,6 +303,19 @@
 /* kendryte-sdk: Kendryte SDK */
 
 /* end of kendryte-sdk: Kendryte SDK */
+#define PKG_USING_RC522
+#define MFRC522_SPI_BUS_NAME "spi1"
+#define MFRC522_SPI_DEVICE_NAME "spi10"
+
+/* Notice: PH3 --> 115 */
+
+#define MFRC522_SS_PIN 115
+
+/* Notice: PH8 --> 120 */
+
+#define MFRC522_RST_PIN 120
+#define PKG_USING_RC522_SAMPLE
+#define PKG_USING_RC522_LATEST_VERSION
 #define PKG_USING_SSD1306
 #define PKG_USING_SSD1306_DEBUG
 #define PKG_USING_SSD1306_I2C_ADDRESS 0x3c
@@ -358,6 +371,8 @@
 #define BSP_USING_I2C1
 #define BSP_I2C1_SCL_PIN 0x50c
 #define BSP_I2C1_SDA_PIN 0x50b
+#define BSP_USING_SPI
+#define BSP_USING_SPI1
 /* end of On-chip Peripheral Drivers */
 
 /* Board extended module Drivers */

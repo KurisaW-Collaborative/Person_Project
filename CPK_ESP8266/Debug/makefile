@@ -25,6 +25,7 @@ RM := rm -rf
 -include rt-thread/components/libc/compilers/newlib/subdir.mk
 -include rt-thread/components/libc/compilers/common/subdir.mk
 -include rt-thread/components/finsh/subdir.mk
+-include rt-thread/components/drivers/spi/subdir.mk
 -include rt-thread/components/drivers/serial/subdir.mk
 -include rt-thread/components/drivers/sensors/subdir.mk
 -include rt-thread/components/drivers/rtc/subdir.mk
@@ -34,18 +35,23 @@ RM := rm -rf
 -include rt-thread/components/dfs/src/subdir.mk
 -include rt-thread/components/dfs/filesystems/devfs/subdir.mk
 -include ra_gen/subdir.mk
+-include ra/fsp/src/r_spi/subdir.mk
 -include ra/fsp/src/r_sci_uart/subdir.mk
 -include ra/fsp/src/r_ioport/subdir.mk
 -include ra/fsp/src/r_iic_master/subdir.mk
 -include ra/fsp/src/r_icu/subdir.mk
+-include ra/fsp/src/r_dtc/subdir.mk
 -include ra/fsp/src/bsp/mcu/all/subdir.mk
 -include ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/subdir.mk
 -include packages/webclient-v2.2.0/src/subdir.mk
 -include packages/webclient-v2.2.0/samples/subdir.mk
 -include packages/ssd1306-latest/src/subdir.mk
 -include packages/ssd1306-latest/examples/subdir.mk
--include packages/pahomqtt-v1.1.0/MQTTPacket/src/subdir.mk
--include packages/pahomqtt-v1.1.0/MQTTClient-RT/subdir.mk
+-include packages/rc522-latest/src/subdir.mk
+-include packages/rc522-latest/port/subdir.mk
+-include packages/rc522-latest/examples/subdir.mk
+-include packages/pahomqtt-latest/MQTTPacket/src/subdir.mk
+-include packages/pahomqtt-latest/MQTTClient-RT/subdir.mk
 -include packages/onenet-latest/src/subdir.mk
 -include packages/onenet-latest/samples/subdir.mk
 -include packages/netutils-latest/ntp/subdir.mk
@@ -89,7 +95,7 @@ all: rtthread.elf secondary-outputs
 
 # 工具调用
 rtthread.elf: $(OBJS) $(USER_OBJS)
-	arm-none-eabi-gcc -T "D:\RT-Thread\RT-ThreadStudio\workspace\CPK_esp8266\script\fsp.ld" -Xlinker --gc-sections -L"D:\RT-Thread\RT-ThreadStudio\workspace\CPK_esp8266\script" -Wl,-Map,"rtthread.map" -Xlinker --cref -mcpu=cortex-m33 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wl,--gc-sections,-Map=rtthread.map,-cref,-u,Reset_Handler -L script/ -o "rtthread.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -T "D:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\CPK_ESP8266\script\fsp.ld" -Xlinker --gc-sections -L"D:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\CPK_ESP8266\script" -Wl,-Map,"rtthread.map" -Xlinker --cref -mcpu=cortex-m33 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wl,--gc-sections,-Map=rtthread.map,-cref,-u,Reset_Handler -L script/ -o "rtthread.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 
 rtthread.hex: rtthread.elf
 	arm-none-eabi-objcopy -O ihex "rtthread.elf"  "rtthread.hex"
