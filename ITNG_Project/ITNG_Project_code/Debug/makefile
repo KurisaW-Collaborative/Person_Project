@@ -95,7 +95,7 @@ all: rtthread.elf secondary-outputs
 
 # 工具调用
 rtthread.elf: $(OBJS) $(USER_OBJS)
-	arm-none-eabi-gcc -T "D:\RT-Thread\RT-ThreadStudio\workspace\CPK_ESP8266\script\fsp.ld" -Xlinker --gc-sections -L"D:\RT-Thread\RT-ThreadStudio\workspace\CPK_ESP8266\script" -Wl,-Map,"rtthread.map" -Xlinker --cref -mcpu=cortex-m33 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wl,--gc-sections,-Map=rtthread.map,-cref,-u,Reset_Handler -L script/ -o "rtthread.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -T "D:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\script\fsp.ld" -Xlinker --gc-sections -L"D:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\script" -Wl,-Map,"rtthread.map" -Xlinker --cref -mcpu=cortex-m33 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wl,--gc-sections,-Map=rtthread.map,-cref,-u,Reset_Handler -L script/ -o "rtthread.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 
 rtthread.hex: rtthread.elf
 	arm-none-eabi-objcopy -O ihex "rtthread.elf"  "rtthread.hex"
