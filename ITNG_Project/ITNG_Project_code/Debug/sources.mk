@@ -44,6 +44,7 @@ ra/fsp/src/r_dtc \
 ra/fsp/src/r_icu \
 ra/fsp/src/r_iic_master \
 ra/fsp/src/r_ioport \
+ra/fsp/src/r_rtc \
 ra/fsp/src/r_sci_uart \
 ra/fsp/src/r_spi \
 ra_gen \

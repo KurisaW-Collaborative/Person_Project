@@ -3,7 +3,7 @@
         #define VECTOR_DATA_H
                 /* Number of interrupts allocated */
         #ifndef VECTOR_DATA_IRQ_COUNT
-        #define VECTOR_DATA_IRQ_COUNT    (17)
+        #define VECTOR_DATA_IRQ_COUNT    (20)
         #endif
         /* ISR prototypes */
         void r_icu_isr(void);
@@ -19,6 +19,8 @@
         void spi_txi_isr(void);
         void spi_tei_isr(void);
         void spi_eri_isr(void);
+        void rtc_alarm_periodic_isr(void);
+        void rtc_carry_isr(void);
 
         /* Vector table allocations */
         #define VECTOR_NUMBER_ICU_IRQ0 ((IRQn_Type) 0) /* ICU IRQ0 (External pin interrupt 0) */
@@ -55,4 +57,10 @@
         #define SPI1_TEI_IRQn          ((IRQn_Type) 15) /* SPI1 TEI (Transmission complete event) */
         #define VECTOR_NUMBER_SPI1_ERI ((IRQn_Type) 16) /* SPI1 ERI (Error) */
         #define SPI1_ERI_IRQn          ((IRQn_Type) 16) /* SPI1 ERI (Error) */
+        #define VECTOR_NUMBER_RTC_ALARM ((IRQn_Type) 17) /* RTC ALARM (Alarm interrupt) */
+        #define RTC_ALARM_IRQn          ((IRQn_Type) 17) /* RTC ALARM (Alarm interrupt) */
+        #define VECTOR_NUMBER_RTC_PERIOD ((IRQn_Type) 18) /* RTC PERIOD (Periodic interrupt) */
+        #define RTC_PERIOD_IRQn          ((IRQn_Type) 18) /* RTC PERIOD (Periodic interrupt) */
+        #define VECTOR_NUMBER_RTC_CARRY ((IRQn_Type) 19) /* RTC CARRY (Carry interrupt) */
+        #define RTC_CARRY_IRQn          ((IRQn_Type) 19) /* RTC CARRY (Carry interrupt) */
         #endif /* VECTOR_DATA_H */

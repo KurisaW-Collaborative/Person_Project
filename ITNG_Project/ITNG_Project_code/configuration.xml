@@ -182,6 +182,10 @@
       <description>Serial Peripheral Interface</description>
       <originalPack>Renesas.RA.3.5.0.pack</originalPack>
     </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_rtc" variant="" vendor="Renesas" version="3.5.0">
+      <description>Real Time Clock</description>
+      <originalPack>Renesas.RA.3.5.0.pack</originalPack>
+    </component>
   </raComponentSelection>
   <raElcConfiguration/>
   <raIcuConfiguration/>
@@ -318,6 +322,19 @@
       <property id="module.driver.transfer.num_blocks" value="0"/>
       <property id="module.driver.transfer.activation_source" value="_disabled"/>
     </module>
+    <module id="module.driver.rtc_on_rtc.788594946">
+      <property id="module.driver.rtc.name" value="g_rtc"/>
+      <property id="module.driver.rtc.clock_source" value="module.driver.rtc.clock_source.clock_source_loco"/>
+      <property id="module.driver.rtc.freq_cmpr_value_loco" value="255"/>
+      <property id="module.driver.rtc.err_adjustment_mode" value="module.driver.rtc.err_adjustment_mode.m1"/>
+      <property id="module.driver.rtc.err_adjustment_period" value="module.driver.rtc.err_adjustment_period.p1"/>
+      <property id="module.driver.rtc.err_adjustment_type" value="module.driver.rtc.err_adjustment_type.t1"/>
+      <property id="module.driver.rtc.err_adjustment_value" value="0"/>
+      <property id="module.driver.rtc.p_callback" value="rtc_callback"/>
+      <property id="module.driver.rtc.alarm_ipl" value="board.icu.common.irq.priority12"/>
+      <property id="module.driver.rtc.periodic_ipl" value="board.icu.common.irq.priority12"/>
+      <property id="module.driver.rtc.carry_ipl" value="board.icu.common.irq.priority12"/>
+    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.external_irq_on_icu.1658263033"/>
@@ -328,6 +345,7 @@
         <stack module="module.driver.transfer_on_dtc.903116361" requires="module.driver.spi_on_spi.requires.transfer_tx"/>
         <stack module="module.driver.transfer_on_dtc.185431084" requires="module.driver.spi_on_spi.requires.transfer_rx"/>
       </stack>
+      <stack module="module.driver.rtc_on_rtc.788594946"/>
     </context>
     <config id="config.driver.ioport">
       <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
@@ -349,6 +367,9 @@
       <property id="config.driver.sci_uart.fifo_support" value="config.driver.sci_uart.fifo_support.disabled"/>
       <property id="config.driver.sci_uart.dtc_support" value="config.driver.sci_uart.dtc_support.disabled"/>
       <property id="config.driver.sci_uart.flow_control" value="config.driver.sci_uart.flow_control.disabled"/>
+    </config>
+    <config id="config.driver.rtc">
+      <property id="config.driver.rtc.param_checking_enable" value="config.driver.rtc.param_checking_enable.bsp"/>
     </config>
     <config id="config.driver.spi">
       <property id="config.driver.spi.param_checking_enable" value="config.driver.spi.param_checking_enable.bsp"/>

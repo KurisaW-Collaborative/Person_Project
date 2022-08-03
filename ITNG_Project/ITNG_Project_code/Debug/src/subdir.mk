@@ -6,17 +6,20 @@
 C_SRCS += \
 ../src/ITNG_Project1.c \
 ../src/ITNG_Project2.c \
-../src/hal_entry.c 
+../src/hal_entry.c \
+../src/test.c 
 
 OBJS += \
 ./src/ITNG_Project1.o \
 ./src/ITNG_Project2.o \
-./src/hal_entry.o 
+./src/hal_entry.o \
+./src/test.o 
 
 C_DEPS += \
 ./src/ITNG_Project1.d \
 ./src/ITNG_Project2.d \
-./src/hal_entry.d 
+./src/hal_entry.d \
+./src/test.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -121,6 +121,22 @@ void oled_thread_entry(void *parameter)
     }
 }
 
+void RC522_thread_entry(void *parameter)
+{
+    rt_mutex_take(humi_temp_mutex, RT_WAITING_FOREVER);
+    if(number1 != number2)
+    {
+      rt_kprintf("not protect.number1 = %d, mumber2 = %d \n",number1 ,number2);
+    }
+    else
+    {
+      rt_kprintf("humi_temp_mutex protect ,number1 = mumber2 is %d\n",number1);
+      number1++;
+      number2++;
+      rt_mutex_release(humi_temp_mutex);
+    }
+}
+
 /*********************************************************************************/
 static int ITNG_Project(void)
 {
@@ -172,7 +188,6 @@ static int ITNG_Project(void)
             ssd1306_Fill(White);
             ssd1306_SetCursor(0, 5);
             ssd1306_WriteString("Now Time", Font_16x26, Black);
-//            ssd1306_Fill(White);
             ssd1306_SetCursor(40, 40);
             ssd1306_WriteString(mstr, Font_11x18, Black);
             ssd1306_SetCursor(50, 40);
@@ -222,6 +237,19 @@ static int ITNG_Project(void)
 //            PICC_DumpToSerial(uid);
 //
 //            PCD_End();
+//            RC522_thread = rt_thread_create("RC522_thread", RC522_thread_entry, RT_NULL, sizeof(thread1_stack), 21, 500);
+//            if(RC522_thread == RT_NULL)
+//            {
+//                LOG_D("RC522_thread create failed...\n");
+//            }
+//            else
+//            {
+//                LOG_D("RC522_thread create successed...\n");
+//            }
+//
+//            rt_thread_startup(RC522_thread);
+//            rt_kprintf("RC522_thread is startup!\n");
+//            rt_thread_mdelay(1000);
             status = 2;
             break;
 
@@ -254,7 +282,7 @@ static int ITNG_Project(void)
             }
 
             //线程一
-            aht10_read_thread = rt_thread_create("aht10_read_thread", aht10_read_thread_entry,RT_NULL, sizeof(thread1_stack), 22, 500);
+            aht10_read_thread = rt_thread_create("aht10_read_thread", aht10_read_thread_entry,RT_NULL, sizeof(thread2_stack), 22, 500);
             if(aht10_read_thread == RT_NULL)
             {
                 LOG_D("aht10_read_thread create failed...\n");
@@ -272,7 +300,7 @@ static int ITNG_Project(void)
 
         case 3:
             //线程二
-            onenet_aht10_thread = rt_thread_create("onenet_aht10_thread", onenet_aht10_thread_entry,RT_NULL, sizeof(thread2_stack), 23, 500);
+            onenet_aht10_thread = rt_thread_create("onenet_aht10_thread", onenet_aht10_thread_entry,RT_NULL, sizeof(thread3_stack), 23, 500);
             if(onenet_aht10_thread == RT_NULL)
             {
                 LOG_D("onenet_aht10_thread create failed...\n");
@@ -313,7 +341,7 @@ static int ITNG_Project(void)
 
         case 4:
             // 线程三
-            oled_thread = rt_thread_create("oled_thread", oled_thread_entry, RT_NULL, sizeof(thread3_stack), 24, 500);
+            oled_thread = rt_thread_create("oled_thread", oled_thread_entry, RT_NULL, sizeof(thread4_stack), 24, 500);
             if(oled_thread == RT_NULL)
             {
                 LOG_D("oled_thread create failed...\n");

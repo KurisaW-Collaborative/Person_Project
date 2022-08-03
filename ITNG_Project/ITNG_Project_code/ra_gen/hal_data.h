@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include "bsp_api.h"
 #include "common_data.h"
+#include "r_rtc.h"
+#include "r_rtc_api.h"
 #include "r_dtc.h"
 #include "r_transfer_api.h"
 #include "r_spi.h"
@@ -14,6 +16,16 @@
 #include "r_icu.h"
 #include "r_external_irq_api.h"
 FSP_HEADER
+/* RTC Instance. */
+extern const rtc_instance_t g_rtc;
+
+/** Access the RTC instance using these structures when calling API functions directly (::p_api is not used). */
+extern rtc_instance_ctrl_t g_rtc_ctrl;
+extern const rtc_cfg_t g_rtc_cfg;
+
+#ifndef rtc_callback
+void rtc_callback(rtc_callback_args_t * p_args);
+#endif
 /* Transfer on DTC Instance. */
 extern const transfer_instance_t g_transfer1;
 

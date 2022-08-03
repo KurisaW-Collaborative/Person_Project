@@ -85,6 +85,9 @@ packages/rc522-latest/examples/firmware_check.o: \
  D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\api/bsp_api.h \
  D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg/r_ioport_cfg.h \
  D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg\bsp/bsp_pin_cfg.h \
+ D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\instances/r_rtc.h \
+ D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg/r_rtc_cfg.h \
+ D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\api/r_rtc_api.h \
  D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\instances/r_dtc.h \
  D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\api/r_transfer_api.h \
  D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg/r_dtc_cfg.h \
@@ -184,6 +187,9 @@ D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Projec
 D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\api/bsp_api.h:
 D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg/r_ioport_cfg.h:
 D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg\bsp/bsp_pin_cfg.h:
+D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\instances/r_rtc.h:
+D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg/r_rtc_cfg.h:
+D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\api/r_rtc_api.h:
 D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\instances/r_dtc.h:
 D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra\fsp\inc\api/r_transfer_api.h:
 D\:\RT-Thread\RT-ThreadStudio\workspace\Project_hosting\ITNG_Project\ITNG_Project_code\ra_cfg\fsp_cfg/r_dtc_cfg.h:

@@ -21,6 +21,9 @@
             [14] = spi_txi_isr, /* SPI1 TXI (Transmit buffer empty) */
             [15] = spi_tei_isr, /* SPI1 TEI (Transmission complete event) */
             [16] = spi_eri_isr, /* SPI1 ERI (Error) */
+            [17] = rtc_alarm_periodic_isr, /* RTC ALARM (Alarm interrupt) */
+            [18] = rtc_alarm_periodic_isr, /* RTC PERIOD (Periodic interrupt) */
+            [19] = rtc_carry_isr, /* RTC CARRY (Carry interrupt) */
         };
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_MAX_ENTRIES] =
         {
@@ -41,5 +44,8 @@
             [14] = BSP_PRV_IELS_ENUM(EVENT_SPI1_TXI), /* SPI1 TXI (Transmit buffer empty) */
             [15] = BSP_PRV_IELS_ENUM(EVENT_SPI1_TEI), /* SPI1 TEI (Transmission complete event) */
             [16] = BSP_PRV_IELS_ENUM(EVENT_SPI1_ERI), /* SPI1 ERI (Error) */
+            [17] = BSP_PRV_IELS_ENUM(EVENT_RTC_ALARM), /* RTC ALARM (Alarm interrupt) */
+            [18] = BSP_PRV_IELS_ENUM(EVENT_RTC_PERIOD), /* RTC PERIOD (Periodic interrupt) */
+            [19] = BSP_PRV_IELS_ENUM(EVENT_RTC_CARRY), /* RTC CARRY (Carry interrupt) */
         };
         #endif
