@@ -51,7 +51,7 @@ ESP8266是一款超低功耗的UART-WiFi 透传模块，拥有业内极富竞争
 
 AHT10是款高精度, 完全校准,贴片封装的温湿度传感器，MEMS的制作工艺， 确保产品具有极高的可靠性与卓越的长期稳定性。传感器包括一个电容式感湿元件和一个高性能CMOS微处理器相连接。该产品具有品质卓越超快响应、抗干扰能力强性价比极高等优点。
 
-AHT10通信方式采用标准1C通信方式，超小的体积、极低的功耗,使其成为各类应用甚至最为苛刻的应用场合的最佳选择。
+AHT10通信方式采用标准i2C通信方式，超小的体积、极低的功耗,使其成为各类应用甚至最为苛刻的应用场合的最佳选择。
 
 ![image-20220802212315237](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202208022123281.png)
 
@@ -114,7 +114,27 @@ MFRC522是高度集成的非接触式(13.56MHz)读写卡芯片。此发送模块
 
 
 
-#### 4、软件说明
+#### 4、RT-Thread使用情况说明
+
+* RT-Thread4.1.0版本
+* ESP8266模块，用于AT联网及onenet云端数据上报
+* RC522读卡模块，对IC卡进行读取
+* AHT10温湿度传感器，用于温湿度数值的读取
+* SSD1306 OLED显示屏，用于读卡提示及温湿度显示还有时间显示
+
+
+
+本项目共设计三个线程，并且通过互斥量的使用来保证对资源的获取。
+
+（1）AHT10温湿度读取线程：上电之后，经过对AHT10模块的初始化，使用i2c协议进行数据的传输，并将读取到的信息及时上报到ONENET云端，且显示温湿度数据到OLED屏幕上。
+
+（2）ONENET线程：系统通过ESP8266模块使用AT命令联网，以及AHT10模块对数据的采集，使用MQTT协议将数据上报到ONENET云平台。
+
+（3）OLED显示线程：该线程负责对传感器信息传输的反馈，包括初始化，刷卡感应，实时时间显示以及温湿度四大显示界面。
+
+
+
+#### 5、软件说明
 
 开发平台：
 
@@ -152,8 +172,10 @@ onenet上云可能会遇到问题,需要使能打开进程间通信管道，问�
 
 
 
-#### 5、项目演示
+#### 6、项目演示
 
 代码仓库：[ITNG_Project_code](https://github.com/kurisaW/Project_hosting/tree/main/ITNG_Project/ITNG_Project_code)
 
 演示视频：[CPK-RA6M4智慧门禁项目演示.mp4](https://github.com/kurisaW/Project_hosting/blob/main/ITNG_Project/CPK-RA6M4%E6%99%BA%E6%85%A7%E9%97%A8%E7%A6%81%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA.mp4)
+
+![image-20220803155811326](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202208031558134.png)
