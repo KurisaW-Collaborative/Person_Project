@@ -176,6 +176,6 @@ onenet上云可能会遇到问题,需要使能打开进程间通信管道，问�
 
 代码仓库：[ITNG_Project_code](https://github.com/kurisaW/Project_hosting/tree/main/ITNG_Project/ITNG_Project_code)
 
-演示视频：[CPK-RA6M4智慧门禁项目演示.mp4](https://github.com/kurisaW/Project_hosting/blob/main/ITNG_Project/CPK-RA6M4%E6%99%BA%E6%85%A7%E9%97%A8%E7%A6%81%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA.mp4)
+演示视频：[RT-Thread 夏令营 瑞萨RA6M4开发板作品](https://www.bilibili.com/video/BV14S4y1x7fr?spm_id_from=333.999.0.0&vd_source=7de393144f462a4eade54292bd598c34)
 
 ![image-20220803155811326](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202208031558134.png)
