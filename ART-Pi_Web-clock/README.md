@@ -15,55 +15,33 @@
 
 ## 二、新建RT-Thread 项目
 
-<<<<<<< HEAD
 ![在这里插入图片描述](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209150958982.png)
 
 
 
 ![在这里插入图片描述](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209150958235.png)
-=======
-![image-20220610074755216](G:/Typora/user_potograph/image-20220610074755216.png)
 
 
-
-![image-20220610074802308](G:/Typora/user_potograph/image-20220610074802308.png)
->>>>>>> 5addfe6aa690bbde80b75fccacd131ccc3bfeb9d
 
 ## 三、获取温湿度数据
 
 #### 1、双击打开左边导航栏的RT-Thread Setting
 
-<<<<<<< HEAD
 ![在这里插入图片描述](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209150958496.png)
 
 #### 2、使能软件模拟i2c（单击点亮即可）
 
 ![](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209150959232.png)
-=======
-![image-20220610075237621](G:/Typora/user_potograph/image-20220610075237621.png)
-
-#### 2、使能软件模拟i2c（单击点亮即可）
-
-![image-20220610075415025](G:/Typora/user_potograph/image-20220610075415025.png)
->>>>>>> 5addfe6aa690bbde80b75fccacd131ccc3bfeb9d
 
 #### 3、配置i2c及相关引脚
 
 `这里的i2c引脚配置依自己开发板而定，配置完成后CTRL+S保存配置`
 
-<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209150959628.png)
 
 #### 4、添加SHT3X软件包
 
 ![](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209150959521.png)
-=======
-![image-20220610075803328](G:/Typora/user_potograph/image-20220610075803328.png)
-
-#### 4、添加SHT3X软件包
-
-![image-20220610080544311](G:/Typora/user_potograph/image-20220610080544311.png)
->>>>>>> 5addfe6aa690bbde80b75fccacd131ccc3bfeb9d
 
 `CTRL+S保存配置，点击编译并下载`
 
@@ -71,19 +49,12 @@
 
 `此时打开串口工具，可以看到前面配置的i2c1和i2c3已经注册成功`
 
-<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209150959119.png)
 
 此时在串口输入help，可以看出有一个sht3x配置
 
 ![在这里插入图片描述](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209151000916.png)
-=======
-![image-20220610081344668](G:/Typora/user_potograph/image-20220610081344668.png)
 
-此时在串口输入help，可以看出有一个sht3x配置
-
-![image-20220610082458443](G:/Typora/user_potograph/image-20220610082458443.png)
->>>>>>> 5addfe6aa690bbde80b75fccacd131ccc3bfeb9d
 
 ```
 输入：
@@ -95,7 +66,6 @@ sht3x read（读取温湿度信息）
 
 #### 1、使能选择WiFi框架
 
-<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209151001925.png)
 
 #### 2、使能AP6212库
@@ -117,29 +87,7 @@ sht3x read（读取温湿度信息）
 使能软件模拟RTC
 
 ![](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209151002991.png)
-=======
 ![image-20220610082838375](G:/Typora/user_potograph/image-20220610082838375.png)
-
-#### 2、使能AP6212库
-
-![image-20220610082952194](G:/Typora/user_potograph/image-20220610082952194.png)
-
-#### 3、添加easyflash和netutils软件包
-
-![image-20220610083254533](G:/Typora/user_potograph/image-20220610083254533.png)
-
-鼠标右键netutils打开配置项
-
-![image-20220610083332687](G:/Typora/user_potograph/image-20220610083332687.png)
-
-使能NTP (网络时间协议)客户端	
-
-![image-20220610083435024](G:/Typora/user_potograph/image-20220610083435024.png)
-
-使能软件模拟RTC
-
-![image-20220610083539255](G:/Typora/user_potograph/image-20220610083539255.png)
->>>>>>> 5addfe6aa690bbde80b75fccacd131ccc3bfeb9d
 
 CTRL+S保存配置
 
@@ -460,11 +408,8 @@ INIT_BOARD_EXPORT(vtor_config);
 
 #### 1、添加u8g2软件包
 
-<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209151002224.png)
-=======
 ![image-20220610084659587](G:/Typora/user_potograph/image-20220610084659587.png)
->>>>>>> 5addfe6aa690bbde80b75fccacd131ccc3bfeb9d
 
 #### 2、编写oled_display显示线程
 
@@ -744,18 +689,11 @@ INIT_BOARD_EXPORT(vtor_config);
 
 ## 六、实验展示
 
-<<<<<<< HEAD
 ![在这里插入图片描述](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209151002909.png)
 
 ![在这里插入图片描述](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209151004488.png)
 
 ![在这里插入图片描述](https://raw.githubusercontent.com/kurisaW/picbed/main/img/202209151004258.png)
-=======
-![image-20220610090727517](G:/Typora/user_potograph/image-20220610090727517.png)
-
-![image-20220610090746390](G:/Typora/user_potograph/image-20220610090746390.png)
-
-![image-20220610090802329](G:/Typora/user_potograph/image-20220610090802329.png)
 
 
 
