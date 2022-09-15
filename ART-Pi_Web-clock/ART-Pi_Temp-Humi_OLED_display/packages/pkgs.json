@@ -1,0 +1,27 @@
+[
+ {
+  "path": "/packages/iot/netutils", 
+  "ver": "v1.3.2", 
+  "name": "NETUTILS"
+ }, 
+ {
+  "path": "/packages/multimedia/u8g2/u8g2", 
+  "ver": "latest", 
+  "name": "U8G2"
+ }, 
+ {
+  "path": "/packages/tools/EasyFlash", 
+  "ver": "v4.1.0", 
+  "name": "EASYFLASH"
+ }, 
+ {
+  "path": "/packages/system/fal", 
+  "ver": "v1.0.0", 
+  "name": "FAL"
+ }, 
+ {
+  "path": "/packages/peripherals/sht3x", 
+  "ver": "v1.0.0", 
+  "name": "SHT3X"
+ }
+]
