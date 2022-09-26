@@ -402,30 +402,3 @@ void rt_hw_serial_isr(struct rt_serial_device *serial, int event)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```c
-struct rt_serial_device
-{
-    struct rt_device          parent;
-
-    const struct rt_uart_ops *ops;
-    struct serial_configure   config;
-
-    void *serial_rx;
-    void *serial_tx;
-};
-```
-
